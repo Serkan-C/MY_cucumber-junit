@@ -1,0 +1,31 @@
+package cydeo.pages;
+
+import cydeo.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class WikiSearchPage {
+
+    public WikiSearchPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+
+    }
+
+    @FindBy(id = "searchInput")
+    public WebElement searchBox;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement searchButton;
+    @FindBy(id = "firstHeading")
+    public WebElement mainHeader;
+    @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
+    public WebElement wrongMessage;
+
+
+    @FindBy(xpath = "//p[@class='toggle-password']")
+    public WebElement eyeIMG;
+
+    @FindBy(id = "reset-password-submit")
+    public WebElement resetButton;
+
+}
